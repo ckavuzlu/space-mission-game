@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="spaceVM"
+            type="com.example.spacemission.ui.configuration.ConfigurationViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/space_background">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v_80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_h_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v_90"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <TextView
+            android:id="@+id/text_remaining_points_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/remaining_points"
+            android:layout_margin="@dimen/margin_12"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_32"
+            app:layout_constraintEnd_toEndOf="@id/guideline_v_80"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_10"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_h_10"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_remaining_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={spaceVM.remainingSkillLiveData}"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_32"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/text_remaining_points_title"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_80"
+            app:layout_constraintTop_toTopOf="@id/text_remaining_points_title" />
+
+        <View
+            android:id="@+id/view_bookmark"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="@dimen/margin_8"
+            android:background="@color/purple_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_remaining_points" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_spaceship_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_v_90"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_10"
+            app:layout_constraintTop_toBottomOf="@id/view_bookmark"
+            app:layout_constraintVertical_bias="0.05">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/spaceship_name"
+                android:text="@={spaceVM.spaceshipNameLiveData}"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_durability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8"
+            android:text="@string/durability"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_18"
+            app:layout_constraintBottom_toTopOf="@id/slider_durability"
+            app:layout_constraintEnd_toEndOf="@id/guideline_v_90"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_10" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider_durability"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:value="@={spaceVM.durabilityLiveData}"
+            android:valueFrom="0"
+            android:valueTo="13"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_v_90"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_10"
+            app:layout_constraintTop_toBottomOf="@id/edt_spaceship_name"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <TextView
+            android:id="@+id/text_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8"
+            android:text="@string/speed"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_18"
+            app:layout_constraintBottom_toTopOf="@id/slider_speed"
+            app:layout_constraintEnd_toEndOf="@id/guideline_v_90"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_10" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider_speed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:value="@={spaceVM.speedLiveData}"
+            android:valueFrom="0"
+            android:valueTo="13"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_v_90"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_10"
+            app:layout_constraintTop_toBottomOf="@id/slider_durability"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <TextView
+            android:id="@+id/text_storage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8"
+            android:text="@string/storage"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_18"
+            app:layout_constraintBottom_toTopOf="@id/slider_storage"
+            app:layout_constraintEnd_toEndOf="@id/guideline_v_90"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_10" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider_storage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:value="@={spaceVM.storageLiveData}"
+            android:valueFrom="0"
+            android:valueTo="13"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_v_90"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_10"
+            app:layout_constraintTop_toBottomOf="@id/slider_speed"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/go_on"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_v_90"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_10"
+            app:layout_constraintTop_toBottomOf="@id/text_storage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

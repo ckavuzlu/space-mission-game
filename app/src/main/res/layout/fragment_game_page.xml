@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/game_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/space_background"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v_80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v_50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_h_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_h_25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v_95"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v_90"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <TextView
+            android:id="@+id/UGS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_24"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_h_10"
+            app:layout_constraintEnd_toStartOf="@id/EUS"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="UGS : 5000" />
+
+        <TextView
+            android:id="@+id/EUS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_24"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_h_10"
+            app:layout_constraintEnd_toStartOf="@id/DS"
+            app:layout_constraintStart_toEndOf="@id/UGS"
+            app:layout_constraintTop_toBottomOf="@+id/UGS"
+
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="EUS : 500" />
+
+        <TextView
+            android:id="@+id/DS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_24"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_h_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/EUS"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="DS : 50000" />
+
+        <View
+            android:id="@+id/view_bookmark"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="@dimen/margin_8"
+            android:background="@color/purple_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_h_10" />
+
+        <TextView
+
+            android:id="@+id/txt_spaceship_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constrainedWidth="true"
+            app:layout_constrainedHeight="true"
+            android:layout_marginTop="@dimen/margin_12"
+            android:paddingEnd="@dimen/margin_8"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_24"
+            android:textStyle="bold"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@id/guideline_h_25"
+            app:layout_constraintEnd_toEndOf="@id/guideline_v_50"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_05"
+            app:layout_constraintTop_toTopOf="@id/view_bookmark" />
+
+        <TextView
+            android:id="@+id/txt_damage_capacity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:background="@drawable/outline_background"
+            android:textAlignment="center"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_24"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/txt_spaceship_name"
+            app:layout_constraintEnd_toStartOf="@id/txt_count_down"
+            app:layout_constraintStart_toEndOf="@id/guideline_v_50"
+            app:layout_constraintTop_toTopOf="@id/txt_spaceship_name" />
+
+        <TextView
+            android:id="@+id/txt_count_down"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:background="@drawable/outline_background"
+            android:textAlignment="center"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_24"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/txt_spaceship_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txt_damage_capacity"
+            app:layout_constraintTop_toTopOf="@id/txt_spaceship_name" />
+
+        <AutoCompleteTextView
+            android:id="@+id/search_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:completionThreshold="1"
+            android:hint="@string/search_space_station"
+            android:singleLine="true"
+            android:textSize="@dimen/text_24"
+            app:layout_constraintEnd_toEndOf="@id/guideline_v_90"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_10"
+            app:layout_constraintTop_toBottomOf="@id/txt_spaceship_name" />
+
+        <include
+            android:id="@+id/card_space_station"
+            layout="@layout/card_space_station_item"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/card_item_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_v_90"
+            app:layout_constraintStart_toStartOf="@id/guideline_v_10"
+            app:layout_constraintTop_toBottomOf="@id/search_view"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <ImageView
+            android:id="@+id/btn_next_station"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_8"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:layout_constraintBottom_toBottomOf="@id/card_space_station"
+            app:layout_constraintEnd_toStartOf="@id/card_space_station"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/card_space_station" />
+
+        <ImageView
+            android:id="@+id/btn_previous_station"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_8"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            app:layout_constraintBottom_toBottomOf="@id/card_space_station"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/card_space_station"
+            app:layout_constraintTop_toTopOf="@id/card_space_station" />
+
+        <TextView
+            android:id="@+id/txt_current_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/text_32"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_space_station" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Space Mission</string>
+    <string name="remaining_points" translatable="false">Dağıtılacak Puan : </string>
+    <string name="spaceship_name">Uzay Aracı İsmi</string>
+    <string name="durability" translatable="false">Dayanıklılık</string>
+    <string name="speed">Hız</string>
+    <string name="storage">Kapasite</string>
+    <string name="go_on">Devam Et</string>
+    <string name="station">İstasyon</string>
+    <string name="favorite">Favoriler</string>
+    <string name="space_clothes_number">UGS</string>
+    <string name="travel">Travel</string>
+    <string name="you_win">KAZANDIN!</string>
+    <string name="you_lose">KAYBETTİN!</string>
+    <string name="win_message">Tüm Görevleri başarılı bir şekilde yerine getirdin! Tebrikler!</string>
+    <string name="lose_message">Kaynaklarların görevleri yapamayacak seviye :(  </string>
+    <string name="new_game">Yeni Oyun</string>
+    <string name="empty_db">Kayıtlı veri bulunamadı</string>
+
+    <string name="amout_of_EUS">EUS : %1$d</string>
+    <string name="amout_of_DS">DS : %1$d</string>
+    <string name="amout_of_UGS">UGS : %1$d</string>
+
+    <string name="need_capacity">%1$d / %2$d</string>
+    <string name="distance">%1$d EUS</string>
+    <string name="error_empty_name">Uzay gemisi ismi boş olmamalı.</string>
+    <string name="error_left_points">Uzay gemisi puanlarını bitirmek gerekiyor.</string>
+    <string name="error_out_of_points">Maksimum 15 uzay gemisi puanı verebilirsin.</string>
+    <string name="error_zero_skill">Yeteneklere en az 1 puan vermelisin</string>
+    <string name="already_has_game">Oyun Bulundu</string>
+    <string name="do_you_want_to_continue">Eski oyuna devam etmek istiyor musun?</string>
+    <string name="error">Hata</string>
+    <string name="can_not_find_station">İstasyon Bulunamadı Lütfen Listeden Seçin</string>
+    <string name="search_space_station">Uzay İstasyonu Ara</string>
+
+
+</resources>
